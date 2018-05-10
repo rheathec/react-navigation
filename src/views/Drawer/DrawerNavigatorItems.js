@@ -10,6 +10,7 @@ import TouchableItem from '../TouchableItem';
 const DrawerNavigatorItems = ({
   navigation: { state, navigate },
   items,
+  touchableStyle,
   activeItemKey,
   activeTintColor,
   activeBackgroundColor,
@@ -25,6 +26,7 @@ const DrawerNavigatorItems = ({
   inactiveLabelStyle,
   iconContainerStyle,
   drawerPosition,
+  pressColor
 }) => (
   <View style={[styles.container, itemsContainerStyle]}>
     {items.map((route, index) => {
@@ -40,6 +42,7 @@ const DrawerNavigatorItems = ({
       return (
         <TouchableItem
           key={route.key}
+          pressColor={pressColor}
           onPress={() => {
             onItemPress({ route, focused });
           }}
