@@ -16,6 +16,7 @@ const DrawerNavigatorItems = ({
   activeBackgroundColor,
   inactiveTintColor,
   inactiveBackgroundColor,
+  underlayColor,
   getLabel,
   renderIcon,
   onItemPress,
@@ -44,6 +45,7 @@ const DrawerNavigatorItems = ({
         <TouchableItem
           key={route.key}
           pressColor={pressColor}
+          underlayColor={underlayColor}
           buttonContainerStyle={buttonContainerStyle}
           onPress={() => {
             onItemPress({ route, focused });
@@ -93,6 +95,7 @@ DrawerNavigatorItems.defaultProps = {
   activeBackgroundColor: 'rgba(0, 0, 0, .04)',
   inactiveTintColor: 'rgba(0, 0, 0, .87)',
   inactiveBackgroundColor: 'transparent',
+  underlayColor: 'transparent',
   buttonContainerStyle: {},
 };
 

@@ -52,9 +52,9 @@ export default class TouchableItem extends React.Component {
       );
     }
 
-    if (this.props.buttonContainerStyle) {
+    if (this.props.buttonContainerStyle || this.props.underlayColor) {
       return (
-        <TouchableHighlight {...this.props} style={this.props.buttonContainerStyle}>{this.props.children}</TouchableHighlight>
+        <TouchableHighlight {...this.props} underlayColor={this.props.underlayColor} style={this.props.buttonContainerStyle}>{this.props.children}</TouchableHighlight>
       )
     }
 
