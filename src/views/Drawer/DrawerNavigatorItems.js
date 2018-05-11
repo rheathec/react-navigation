@@ -25,6 +25,7 @@ const DrawerNavigatorItems = ({
   activeLabelStyle,
   inactiveLabelStyle,
   iconContainerStyle,
+  buttonContainerStyle,
   drawerPosition,
   pressColor
 }) => (
@@ -43,6 +44,7 @@ const DrawerNavigatorItems = ({
         <TouchableItem
           key={route.key}
           pressColor={pressColor}
+          buttonContainerStyle={buttonContainerStyle}
           onPress={() => {
             onItemPress({ route, focused });
           }}
@@ -91,6 +93,7 @@ DrawerNavigatorItems.defaultProps = {
   activeBackgroundColor: 'rgba(0, 0, 0, .04)',
   inactiveTintColor: 'rgba(0, 0, 0, .87)',
   inactiveBackgroundColor: 'transparent',
+  buttonContainerStyle: {},
 };
 
 const styles = StyleSheet.create({

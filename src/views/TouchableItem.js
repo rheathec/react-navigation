@@ -12,6 +12,7 @@ import {
   Platform,
   TouchableNativeFeedback,
   TouchableOpacity,
+  TouchableHighlight,
   View,
 } from 'react-native';
 
@@ -49,6 +50,12 @@ export default class TouchableItem extends React.Component {
           <View style={style}>{React.Children.only(this.props.children)}</View>
         </TouchableNativeFeedback>
       );
+    }
+
+    if (this.props.buttonContainerStyle) {
+      return (
+        <TouchableHighlight {...this.props} style={this.props.buttonContainerStyle}>{this.props.children}</TouchableHighlight>
+      )
     }
 
     return (
